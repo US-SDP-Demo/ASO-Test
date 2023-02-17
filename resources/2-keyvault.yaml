@@ -1,0 +1,26 @@
+apiVersion: keyvault.azure.com/v1beta20210401preview
+kind: Vault
+metadata:
+  name: asotestkv
+  namespace: aso-test
+spec:
+  location: eastus
+  owner:
+    name: aso-rg
+  properties:
+    tenantId: "52fec9f6-2cb5-4ad4-980c-6c10a565ec19"
+    sku:
+      family: A
+      name: standard
+    accessPolicies:
+      - objectId: "4859d87e-18c4-4449-814a-72e55d0c05f2"
+        tenantId: "52fec9f6-2cb5-4ad4-980c-6c10a565ec19"
+        permissions:
+          certificates:
+            - "get"
+          keys:
+            - "get"
+          secrets:
+            - "get"
+          storage:
+            - "get"
